@@ -52,8 +52,8 @@ log.EnableLevel("foo")
 
 Once these levels are enabled, calls to the info, warn, or debug loggers will 
 print out just like they do for the Print and Fatal built-in loggers. The 
-functions / methods definitions that are defined for each level match exactly 
-the one defined in the build-in package. Namely:
+functions / methods definitions that are defined for each level, match exactly 
+the one defined in the built-in package. Namely:
 ```
 log.Info()
 log.Infof()
