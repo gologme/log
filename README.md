@@ -2,7 +2,7 @@
 
 [![GoDoc](https://godoc.org/github.com/gologme/log?status.png)](https://godoc.org/github.com/gologme/log)
 
-This package is a drop in replacement for the build-in Go log package. All the 
+This package is a drop in replacement for the built-in Go log package. All the 
 functionality of the built-in package still exists and is unchanged. In addition, 
 this package contains a series of small enhancements and additions. Namely, it 
 adds three logging levels. These logging levels are:
