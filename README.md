@@ -38,7 +38,7 @@ go install github.com/gologme/log
 
 ## Example ##
 
-Just like the build-in package, code can still do simple logging just like:
+Just like the built-in package, code can still do simple logging just like:
 ```
 log.Println("some interesting logging message")
 ```
@@ -53,7 +53,7 @@ log.EnableLevel("foo")
 Once these levels are enabled, calls to the info, warn, or debug loggers will 
 print out just like they do for the Print and Fatal built-in loggers. The 
 functions / methods definitions that are defined for each level, match exactly 
-the one defined in the built-in package. Namely:
+the ones defined in the built-in package. The new functions/methods are called:
 ```
 log.Info()
 log.Infof()
@@ -80,8 +80,9 @@ log.Levelln("tracedebug", "some other neat logging message for this level")
 
 The last thing that was enabled was the ability to define the calldepth. The 
 built-in package from the Go authors had this hard coded to a value of 2. A small
-change was made to enable this. From the Go authors source code it seems like 
-normal possible values would be 1, 2, or 3.  
+change was made to enable this to be set by the application using the log package. 
+From the Go authors source code it seems like the normal possible values would 
+be 1, 2, or 3.  
 ```
 log.SetCallDepth()
 ```
