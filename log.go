@@ -511,6 +511,36 @@ func (l *Logger) Debugln(v ...interface{}) {
 }
 
 /*
+Level - This function calls Output to print to the standard logger.
+The first parameter is a logging level, this allows the printing of arbitrary
+logging levels.
+Arguments are handled in the manner of fmt.Print.
+*/
+func (l *Logger) Level(level string, v ...interface{}) {
+	std.Output(level, fmt.Sprint(v...))
+}
+
+/*
+Levelf - This function calls Output to print to the standard logger.
+The first parameter is a logging level, this allows the printing of arbitrary
+logging levels.
+Arguments are handled in the manner of fmt.Printf.
+*/
+func (l *Logger) Levelf(level, format string, v ...interface{}) {
+	std.Output(level, fmt.Sprintf(format, v...))
+}
+
+/*
+Levelln - This function calls Output to print to the standard logger.
+The first parameter is a logging level, this allows the printing of arbitrary
+logging levels.
+Arguments are handled in the manner of fmt.Println.
+*/
+func (l *Logger) Levelln(level string, v ...interface{}) {
+	std.Output(level, fmt.Sprintln(v...))
+}
+
+/*
 Info - This function calls Output to print to the standard logger.
 Arguments are handled in the manner of fmt.Print.
 */

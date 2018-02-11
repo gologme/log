@@ -25,7 +25,7 @@ boards, is the ability to set the calldepth.
 
 
 ## Version ##
-1.0.0
+1.0.1
 
 
 ## Installation ##
