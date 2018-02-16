@@ -46,8 +46,8 @@ log.Println("some interesting logging message")
 In addition to this, users can enable info, warn, or debug logging like:
 ```
 log.EnableLevel("debug")
+log.EnableLevel("warn")
 log.EnableLevel("info")
-log.EnableLevel("foo")
 ```
 
 Once these levels are enabled, calls to the info, warn, or debug loggers will 
