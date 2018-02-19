@@ -424,6 +424,16 @@ func (l *Logger) DisableLevel(level string) {
 }
 
 /*
+GetLevel - This function will return the state of a given level
+*/
+func (l *Logger) GetLevel(level string) bool {
+	if _, ok := l.levels[level]; ok {
+		return l.levels[level]
+	}
+	return false
+}
+
+/*
 EnableLevel - This function will enable the output from the supplied logging level
 */
 func EnableLevel(level string) {
@@ -438,6 +448,20 @@ func DisableLevel(level string) {
 		std.levels[level] = false
 	}
 }
+
+/*
+GetLevel - This function will return the state of a given level
+*/
+func GetLevel(level string) bool {
+	if _, ok := std.levels[level]; ok {
+		return std.levels[level]
+	}
+	return false
+}
+
+// ----------------------------------------------------------------------
+// New logger functions and methods
+// ----------------------------------------------------------------------
 
 /*
 Info - This function calls Output to print to the standard logger.
@@ -516,7 +540,7 @@ Trace - This function calls Output to print to the standard logger.
 Arguments are handled in the manner of fmt.Print.
 */
 func (l *Logger) Trace(v ...interface{}) {
-	l.Output("debug", fmt.Sprint(v...))
+	l.Output("trace", fmt.Sprint(v...))
 }
 
 /*
@@ -524,7 +548,7 @@ Tracef - This function calls Output to print to the standard logger.
 Arguments are handled in the manner of fmt.Printf.
 */
 func (l *Logger) Tracef(format string, v ...interface{}) {
-	l.Output("debug", fmt.Sprintf(format, v...))
+	l.Output("trace", fmt.Sprintf(format, v...))
 }
 
 /*
@@ -532,7 +556,7 @@ Traceln - This function calls Output to print to the standard logger.
 Arguments are handled in the manner of fmt.Println.
 */
 func (l *Logger) Traceln(v ...interface{}) {
-	l.Output("debug", fmt.Sprintln(v...))
+	l.Output("trace", fmt.Sprintln(v...))
 }
 
 /*
@@ -642,7 +666,7 @@ Trace - This function calls Output to print to the standard logger.
 Arguments are handled in the manner of fmt.Print.
 */
 func Trace(v ...interface{}) {
-	std.Output("debug", fmt.Sprint(v...))
+	std.Output("trace", fmt.Sprint(v...))
 }
 
 /*
@@ -650,7 +674,7 @@ Tracef - This function calls Output to print to the standard logger.
 Arguments are handled in the manner of fmt.Printf.
 */
 func Tracef(format string, v ...interface{}) {
-	std.Output("debug", fmt.Sprintf(format, v...))
+	std.Output("trace", fmt.Sprintf(format, v...))
 }
 
 /*
@@ -658,7 +682,7 @@ Traceln - This function calls Output to print to the standard logger.
 Arguments are handled in the manner of fmt.Println.
 */
 func Traceln(v ...interface{}) {
-	std.Output("debug", fmt.Sprintln(v...))
+	std.Output("trace", fmt.Sprintln(v...))
 }
 
 /*
