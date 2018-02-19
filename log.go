@@ -83,6 +83,7 @@ func (l *Logger) initLevels() {
 	l.levels["info"] = false
 	l.levels["warn"] = false
 	l.levels["debug"] = false
+	l.levels["trace"] = false
 }
 
 // SetOutput sets the output destination for the logger.
@@ -511,6 +512,30 @@ func (l *Logger) Debugln(v ...interface{}) {
 }
 
 /*
+Trace - This function calls Output to print to the standard logger.
+Arguments are handled in the manner of fmt.Print.
+*/
+func (l *Logger) Trace(v ...interface{}) {
+	l.Output("debug", fmt.Sprint(v...))
+}
+
+/*
+Tracef - This function calls Output to print to the standard logger.
+Arguments are handled in the manner of fmt.Printf.
+*/
+func (l *Logger) Tracef(format string, v ...interface{}) {
+	l.Output("debug", fmt.Sprintf(format, v...))
+}
+
+/*
+Traceln - This function calls Output to print to the standard logger.
+Arguments are handled in the manner of fmt.Println.
+*/
+func (l *Logger) Traceln(v ...interface{}) {
+	l.Output("debug", fmt.Sprintln(v...))
+}
+
+/*
 Level - This function calls Output to print to the standard logger.
 The first parameter is a logging level, this allows the printing of arbitrary
 logging levels.
@@ -609,6 +634,30 @@ Debugln - This function calls Output to print to the standard logger.
 Arguments are handled in the manner of fmt.Println.
 */
 func Debugln(v ...interface{}) {
+	std.Output("debug", fmt.Sprintln(v...))
+}
+
+/*
+Trace - This function calls Output to print to the standard logger.
+Arguments are handled in the manner of fmt.Print.
+*/
+func Trace(v ...interface{}) {
+	std.Output("debug", fmt.Sprint(v...))
+}
+
+/*
+Tracef - This function calls Output to print to the standard logger.
+Arguments are handled in the manner of fmt.Printf.
+*/
+func Tracef(format string, v ...interface{}) {
+	std.Output("debug", fmt.Sprintf(format, v...))
+}
+
+/*
+Traceln - This function calls Output to print to the standard logger.
+Arguments are handled in the manner of fmt.Println.
+*/
+func Traceln(v ...interface{}) {
 	std.Output("debug", fmt.Sprintln(v...))
 }
 

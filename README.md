@@ -43,11 +43,12 @@ Just like the built-in package, code can still do simple logging just like:
 log.Println("some interesting logging message")
 ```
 
-In addition to this, users can enable info, warn, or debug logging like:
+In addition to this, users can enable info, warn, debug, or trace logging like:
 ```
-log.EnableLevel("debug")
-log.EnableLevel("warn")
 log.EnableLevel("info")
+log.EnableLevel("warn")
+log.EnableLevel("debug")
+log.EnableLevel("trace")
 ```
 
 Once these levels are enabled, calls to the info, warn, or debug loggers will 
@@ -64,6 +65,9 @@ log.Warnln()
 log.Debug()
 log.Debugf()
 log.Debugln()
+log.Trace()
+log.Tracef()
+log.Traceln()
 ```
 
 In addition to the defined levels, arbitrary levels can be enabled.  For example:
