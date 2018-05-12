@@ -52,8 +52,8 @@ log.EnableLevel("debug")
 log.EnableLevel("trace")
 ```
 
-Once these levels are enabled, calls to the info, warn, or debug loggers will 
-print out just like they do for the Print and Fatal built-in loggers. The 
+Once these levels are enabled, calls to the info, warn, debug, or trace loggers 
+will print out just like they do for the Print and Fatal built-in loggers. The 
 functions / methods definitions that are defined for each level, match exactly 
 the ones defined in the built-in package. The new functions/methods are called:
 ```
