@@ -5,13 +5,14 @@
 This package is a drop in replacement for the built-in Go log package. All the 
 functionality of the built-in package still exists and is unchanged. In addition, 
 this package contains a series of small enhancements and additions. Namely, it 
-adds three logging levels. These logging levels are:
+adds four logging levels. These logging levels are:
 
 - Info
 - Warn
 - Debug
+- Trace
 
-In addition to these three defined logging levels, users can also define their 
+In addition to these four defined logging levels, users can also define their 
 own arbitrary logging levels.
 
 Unlike other loggers, these logging levels are not enabled in a chain. Meaning, 
