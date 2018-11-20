@@ -26,7 +26,7 @@ boards, is the ability to set the calldepth.
 
 
 ## Version ##
-1.0.1
+1.1.0
 
 
 ## Installation ##
@@ -44,15 +44,16 @@ Just like the built-in package, code can still do simple logging just like:
 log.Println("some interesting logging message")
 ```
 
-In addition to this, users can enable info, warn, debug, or trace logging like:
+In addition to this, users can enable info, warn, error, debug, or trace logging like:
 ```
 log.EnableLevel("info")
 log.EnableLevel("warn")
+log.EnableLevel("error")
 log.EnableLevel("debug")
 log.EnableLevel("trace")
 ```
 
-Once these levels are enabled, calls to the info, warn, debug, or trace loggers 
+Once these levels are enabled, calls to the info, warn, error, debug, or trace loggers 
 will print out just like they do for the Print and Fatal built-in loggers. The 
 functions / methods definitions that are defined for each level, match exactly 
 the ones defined in the built-in package. The new functions/methods are called:
@@ -63,6 +64,9 @@ log.Infoln()
 log.Warn()
 log.Warnf()
 log.Warnln()
+log.Error()
+log.Errorf()
+log.Errorln()
 log.Debug()
 log.Debugf()
 log.Debugln()

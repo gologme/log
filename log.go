@@ -4,6 +4,8 @@
 // log package from the Go Authors found here:
 // https://golang.org/src/log/log.go
 // See their copyright below.
+//
+// Version 1.1.0
 
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
@@ -82,6 +84,7 @@ func (l *Logger) initLevels() {
 	l.levels = make(map[string]bool)
 	l.levels["info"] = false
 	l.levels["warn"] = false
+	l.levels["error"] = false
 	l.levels["debug"] = false
 	l.levels["trace"] = false
 }
@@ -512,6 +515,30 @@ func (l *Logger) Warnln(v ...interface{}) {
 }
 
 /*
+Error - This function calls Output to print to the standard logger.
+Arguments are handled in the manner of fmt.Print.
+*/
+func (l *Logger) Error(v ...interface{}) {
+	l.Output("error", fmt.Sprint(v...))
+}
+
+/*
+Errorf - This function calls Output to print to the standard logger.
+Arguments are handled in the manner of fmt.Printf.
+*/
+func (l *Logger) Errorf(format string, v ...interface{}) {
+	l.Output("error", fmt.Sprintf(format, v...))
+}
+
+/*
+Errorln - This function calls Output to print to the standard logger.
+Arguments are handled in the manner of fmt.Println.
+*/
+func (l *Logger) Errorln(v ...interface{}) {
+	l.Output("error", fmt.Sprintln(v...))
+}
+
+/*
 Debug - This function calls Output to print to the standard logger.
 Arguments are handled in the manner of fmt.Print.
 */
@@ -635,6 +662,30 @@ Arguments are handled in the manner of fmt.Println.
 */
 func Warnln(v ...interface{}) {
 	std.Output("warn", fmt.Sprintln(v...))
+}
+
+/*
+Error - This function calls Output to print to the standard logger.
+Arguments are handled in the manner of fmt.Print.
+*/
+func Error(v ...interface{}) {
+	std.Output("error", fmt.Sprint(v...))
+}
+
+/*
+Errorf - This function calls Output to print to the standard logger.
+Arguments are handled in the manner of fmt.Printf.
+*/
+func Errorf(format string, v ...interface{}) {
+	std.Output("error", fmt.Sprintf(format, v...))
+}
+
+/*
+Errorln - This function calls Output to print to the standard logger.
+Arguments are handled in the manner of fmt.Println.
+*/
+func Errorln(v ...interface{}) {
+	std.Output("error", fmt.Sprintln(v...))
 }
 
 /*
