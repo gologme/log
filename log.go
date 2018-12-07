@@ -5,7 +5,7 @@
 // https://golang.org/src/log/log.go
 // See their copyright below.
 //
-// Version 1.1.0
+// Version 1.2.0
 
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
@@ -593,7 +593,7 @@ logging levels.
 Arguments are handled in the manner of fmt.Print.
 */
 func (l *Logger) Level(level string, v ...interface{}) {
-	std.Output(level, fmt.Sprint(v...))
+	l.Output(level, fmt.Sprint(v...))
 }
 
 /*
@@ -603,7 +603,7 @@ logging levels.
 Arguments are handled in the manner of fmt.Printf.
 */
 func (l *Logger) Levelf(level, format string, v ...interface{}) {
-	std.Output(level, fmt.Sprintf(format, v...))
+	l.Output(level, fmt.Sprintf(format, v...))
 }
 
 /*
@@ -613,7 +613,7 @@ logging levels.
 Arguments are handled in the manner of fmt.Println.
 */
 func (l *Logger) Levelln(level string, v ...interface{}) {
-	std.Output(level, fmt.Sprintln(v...))
+	l.Output(level, fmt.Sprintln(v...))
 }
 
 /*

@@ -9,6 +9,7 @@ adds four logging levels. These logging levels are:
 
 - Info
 - Warn
+- Error
 - Debug
 - Trace
 
@@ -26,7 +27,7 @@ boards, is the ability to set the calldepth.
 
 
 ## Version ##
-1.1.0
+1.2.0
 
 
 ## Installation ##
