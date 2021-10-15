@@ -2,7 +2,7 @@
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/gologme/log)](https://goreportcard.com/report/github.com/gologme/log) 
 [![GoDoc](https://godoc.org/github.com/gologme/log?status.png)](https://godoc.org/github.com/gologme/log)
-[![GitHub license](https://img.shields.io/github.com/gologme/log.svg?style=flat)](https://github.com/gologme/log/blob/master/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/gologme/log.svg?style=flat)](https://github.com/gologme/log/blob/master/LICENSE)
 [![GitHub go.mod Go version of a Go module](https://img.shields.io/github/go-mod/go-version/gologme/log.svg?style=flat)](https://github.com/gologme/log)
 
 
@@ -11,9 +11,9 @@ functionality of the built-in package still exists and is unchanged. In addition
 this package contains a series of small enhancements and additions. Namely, it 
 adds four logging levels. These logging levels are:
 
-- Info
-- Warn
 - Error
+- Warn
+- Info
 - Debug
 - Trace
 
