@@ -9,7 +9,7 @@
 This package is a drop in replacement for the built-in Go log package. All the 
 functionality of the built-in package still exists and is unchanged. In addition, 
 this package contains a series of small enhancements and additions. Namely, it 
-adds four logging levels. These logging levels are:
+adds five logging levels. These logging levels are:
 
 - Error
 - Warn
@@ -17,14 +17,16 @@ adds four logging levels. These logging levels are:
 - Debug
 - Trace
 
-In addition to these four defined logging levels, users can also define their 
+In addition to these five defined logging levels, users can also define their 
 own arbitrary logging levels.
 
-Unlike other loggers, these logging levels are not enabled in a chain. Meaning, 
-once a level is enabled, say Warn, all levels above it are not also enabled. 
-This package is implemented in such a way that users can individually turn on 
-and turn off the various new logging levels. If existing code uses the build-in 
-log package, no change is needed to use this package.
+Unlike other loggers, these logging levels are not enabled in a chain. Meaning,
+once a level is enabled, say Warn, all levels above it are not also enabled.
+This package is implemented in such a way that users can individually turn on
+and turn off the various new logging levels. However, starting with v1.3.0
+users can enable logging in a chain buy enabling logging levels by number
+(see below). If existing code uses the build-in log package, no change is
+needed to use this package.
 
 Another feature that was added, based on comments seen on the various golang 
 boards, is the ability to set the calldepth. 
@@ -38,6 +40,7 @@ boards, is the ability to set the calldepth.
 - Made chagnes based on feedback
   - Sorted log levels into natural order
   - Enabled formatted prefixes that include the log level (e.g., [info] {rest of log line})
+  - Enabled turning on logging levels by number similar to syslog
 
 ## Installation ##
 
@@ -102,15 +105,17 @@ To enable the log level to be included in the prefix enable it.
 log.EnableFormattedPrefix()
 ```
 This will make the log lines look like, note the log level prefix:
+
 `[debug] 2021/10/15 12:46:52 some logging message `
 
 To enable logging by the following numerical levels
-Level 10 = panic, fatal, error, warn, info, debug, & trace
-Level 5 = panic, fatal, error, warn, info, & debug
-Level 4 = panic, fatal, error, warn, & info
-Level 3 = panic, fatal, error, & warn 
-Level 2 = panic, fatal & error
-Level 1 = panic, fatal
+- Level 10 = panic, fatal, error, warn, info, debug, & trace
+- Level 5 = panic, fatal, error, warn, info, & debug
+- Level 4 = panic, fatal, error, warn, & info
+- Level 3 = panic, fatal, error, & warn 
+- Level 2 = panic, fatal & error
+- Level 1 = panic, fatal
+
 ```
 log.EnableLevelsByNumber(int)
 ```
@@ -138,4 +143,4 @@ Go log package was licensed.
 
 ## Copyright ##
 
-Copyright 2017 Bret Jordan, All rights reserved.
+Copyright 2017-2021 Bret Jordan, All rights reserved.
